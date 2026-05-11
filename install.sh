@@ -58,8 +58,10 @@ if [[ "$OSTYPE" == "darwin"* ]] && [[ -d "/Applications/iTerm.app" || -d "$HOME/
   ITERM2_DIR="$HOME/Library/Application Support/iTerm2/DynamicProfiles"
   mkdir -p "$ITERM2_DIR"
   cp "$DOTFILES_DIR/iterm2/profile.json" "$ITERM2_DIR/dotfiles-profile.json"
-  # Set as default profile
-  defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string "Default"
+  # Set as default profile (Guid matches profile's "Guid" field)
+  defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string "dotfiles-profile"
+  # Also set by name for older iTerm2 versions
+  defaults write com.googlecode.iterm2 "Default Bookmark Name" -string "Dotfiles"
   echo "  ✅ iTerm2 profile installed & set as default"
 else
   echo "  ⏭️  iTerm2 not found, skipping"

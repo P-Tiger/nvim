@@ -136,7 +136,7 @@
       },
       "Silence Bell": "0",
       "Rows": "25",
-      "Guid": "Default",
+      "Guid": "dotfiles-profile",
       "Ansi 14 Color (Dark)": {
         "Red Component": "0.5764705882352941",
         "Color Space": "sRGB",
@@ -224,7 +224,7 @@
         "Blue Component": "0.2588235294117647",
         "Green Component": "0.2117647058823529"
       },
-      "Default Bookmark": "No",
+      "Default Bookmark": "Yes",
       "Foreground Color (Light)": {
         "Red Component": "0.5137254901960784",
         "Color Space": "sRGB",
@@ -301,7 +301,7 @@
         "Alpha Component": "1",
         "Green Component": "0.3533304333686829"
       },
-      "Description": "Default",
+      "Description": "Dotfiles",
       "Ansi 7 Color (Dark)": {
         "Red Component": "0.9333333333333333",
         "Color Space": "sRGB",
@@ -316,7 +316,7 @@
         "Alpha Component": "1",
         "Green Component": "0.2366006970405579"
       },
-      "Name": "Default",
+      "Name": "Dotfiles",
       "Transparency": "0",
       "Horizontal Spacing": "1",
       "Cursor Color (Dark)": {
@@ -571,7 +571,7 @@
         "Blue Component": "0.2588235294117647",
         "Green Component": "0.2117647058823529"
       },
-      "Dynamic Profile Parent Name": ""
+      "Dynamic Profile Parent Name": "Default"
     }
   ]
 }
