@@ -41,4 +41,3 @@ cd ~/dotfiles
 Mở iTerm2 — xài luôn. Profile Default đã được set:
 - Font: **FiraCode Nerd Font Mono** size 12
 - Color: Solarized
-- Auto-run: `tmux new-session -A -s main`

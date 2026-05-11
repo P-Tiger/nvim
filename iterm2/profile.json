@@ -167,7 +167,6 @@
       "Window Type": "0",
       "BM Growl": "1",
       "Prompt Before Closing 2": "0",
-      "Command": "tmux new-session -A -s main",
       "Selected Text Color": {
         "Red Component": "0",
         "Color Space": "sRGB",
@@ -232,7 +231,6 @@
         "Blue Component": "0.5882352941176471",
         "Green Component": "0.5803921568627451"
       },
-      "Custom Command": "Yes",
       "Background Color (Dark)": {
         "Red Component": "0",
         "Color Space": "sRGB",
