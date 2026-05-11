@@ -136,7 +136,7 @@
       },
       "Silence Bell": "0",
       "Rows": "25",
-      "Guid": "dotfiles-tmux-profile-001",
+      "Guid": "Default",
       "Ansi 14 Color (Dark)": {
         "Red Component": "0.5764705882352941",
         "Color Space": "sRGB",
@@ -318,7 +318,7 @@
         "Alpha Component": "1",
         "Green Component": "0.2366006970405579"
       },
-      "Name": "tmux",
+      "Name": "Default",
       "Transparency": "0",
       "Horizontal Spacing": "1",
       "Cursor Color (Dark)": {
@@ -572,7 +572,8 @@
         "Color Space": "sRGB",
         "Blue Component": "0.2588235294117647",
         "Green Component": "0.2117647058823529"
-      }
+      },
+      "Dynamic Profile Parent Name": ""
     }
   ]
 }

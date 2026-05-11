@@ -53,16 +53,17 @@ else
 fi
 
 # --- iTerm2 Profile ---
-echo "📦 Setting up iTerm2 'tmux' profile..."
-ITERM2_DIR="$HOME/Library/Application Support/iTerm2/DynamicProfiles"
-if [[ -d "$HOME/Library/Application Support/iTerm2" ]]; then
+echo "📦 Setting up iTerm2 profile..."
+if [[ "$OSTYPE" == "darwin"* ]] && [[ -d "/Applications/iTerm.app" || -d "$HOME/Applications/iTerm.app" ]]; then
+  ITERM2_DIR="$HOME/Library/Application Support/iTerm2/DynamicProfiles"
   mkdir -p "$ITERM2_DIR"
   cp "$DOTFILES_DIR/iterm2/profile.json" "$ITERM2_DIR/dotfiles-profile.json"
-  echo "  ✅ iTerm2 'tmux' profile installed (restart iTerm2 to see it)"
+  # Set as default profile
+  defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string "Default"
+  echo "  ✅ iTerm2 profile installed & set as default"
 else
   echo "  ⏭️  iTerm2 not found, skipping"
 fi
 
 echo ""
-echo "🎉 Done! Open iTerm2 → Profiles → select 'tmux'"
-echo "   Profile auto-runs: tmux new-session -A -s main"
+echo "🎉 Done! Open iTerm2 and it just works."
