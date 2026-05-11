@@ -5,7 +5,21 @@ DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 echo "🚀 Installing dotfiles from: $DOTFILES_DIR"
 
-# --- Tmux ---
+# --- Install tmux if not present ---
+echo "📦 Checking tmux..."
+if command -v tmux &>/dev/null; then
+  echo "  ✅ tmux $(tmux -V | cut -d' ' -f2) already installed"
+else
+  echo "  ⬇️  Installing tmux..."
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install tmux
+  else
+    sudo apt-get update && sudo apt-get install -y tmux
+  fi
+  echo "  ✅ tmux installed"
+fi
+
+# --- Tmux config ---
 echo "📦 Setting up tmux config..."
 mkdir -p ~/.config/tmux
 ln -sf "$DOTFILES_DIR/tmux/tmux.conf" ~/.config/tmux/tmux.conf
@@ -39,17 +53,16 @@ else
 fi
 
 # --- iTerm2 Profile ---
-echo "📦 Setting up iTerm2 profile..."
+echo "📦 Setting up iTerm2 'tmux' profile..."
 ITERM2_DIR="$HOME/Library/Application Support/iTerm2/DynamicProfiles"
 if [[ -d "$HOME/Library/Application Support/iTerm2" ]]; then
   mkdir -p "$ITERM2_DIR"
   cp "$DOTFILES_DIR/iterm2/profile.json" "$ITERM2_DIR/dotfiles-profile.json"
-  echo "  ✅ iTerm2 profile installed (restart iTerm2 to apply)"
+  echo "  ✅ iTerm2 'tmux' profile installed (restart iTerm2 to see it)"
 else
   echo "  ⏭️  iTerm2 not found, skipping"
 fi
 
 echo ""
-echo "🎉 Done! Restart tmux or run: tmux source ~/.config/tmux/tmux.conf"
-echo ""
-echo "⚠️  iTerm2: Go to Profiles → select 'Default' → Set as Default"
+echo "🎉 Done! Open iTerm2 → Profiles → select 'tmux'"
+echo "   Profile auto-runs: tmux new-session -A -s main"

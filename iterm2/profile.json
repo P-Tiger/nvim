@@ -136,7 +136,7 @@
       },
       "Silence Bell": "0",
       "Rows": "25",
-      "Guid": "294051EB-4BD2-40F3-B274-9FF5526C847C",
+      "Guid": "dotfiles-tmux-profile-001",
       "Ansi 14 Color (Dark)": {
         "Red Component": "0.5764705882352941",
         "Color Space": "sRGB",
@@ -167,7 +167,7 @@
       "Window Type": "0",
       "BM Growl": "1",
       "Prompt Before Closing 2": "0",
-      "Command": "",
+      "Command": "tmux new-session -A -s main",
       "Selected Text Color": {
         "Red Component": "0",
         "Color Space": "sRGB",
@@ -232,7 +232,7 @@
         "Blue Component": "0.5882352941176471",
         "Green Component": "0.5803921568627451"
       },
-      "Custom Command": "No",
+      "Custom Command": "Yes",
       "Background Color (Dark)": {
         "Red Component": "0",
         "Color Space": "sRGB",
@@ -318,7 +318,7 @@
         "Alpha Component": "1",
         "Green Component": "0.2366006970405579"
       },
-      "Name": "Default",
+      "Name": "tmux",
       "Transparency": "0",
       "Horizontal Spacing": "1",
       "Cursor Color (Dark)": {
@@ -439,7 +439,9 @@
       "Working Directory": "/Users/hohp",
       "Shortcut": "",
       "Mouse Reporting": "1",
-      "Tags": [],
+      "Tags": [
+        "dotfiles"
+      ],
       "Set Local Environment Vars": "2",
       "Ansi 6 Color (Light)": {
         "Red Component": "0.1647058823529412",

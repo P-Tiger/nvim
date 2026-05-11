@@ -38,5 +38,6 @@ cd ~/dotfiles
 
 ## Sau khi cài
 
-- **iTerm2**: Restart iTerm2 → Profiles → chọn "Default" → Set as Default
-- Font đã được set sẵn trong profile: **FiraCode Nerd Font Mono** size **12**
+- **iTerm2**: Restart iTerm2 → Profiles → chọn **"tmux"** → Set as Default
+- Profile tự chạy `tmux new-session -A -s main` khi mở tab mới
+- Font đã được set sẵn: **FiraCode Nerd Font Mono** size **12**
