@@ -62,7 +62,8 @@ if [[ "$OSTYPE" == "darwin"* ]] && [[ -d "/Applications/iTerm.app" || -d "$HOME/
   defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string "dotfiles-profile"
   # Also set by name for older iTerm2 versions
   defaults write com.googlecode.iterm2 "Default Bookmark Name" -string "Dotfiles"
-  echo "  ✅ iTerm2 profile installed & set as default"
+  echo "  ✅ iTerm2 profile 'Dotfiles' installed & set as default"
+  echo "  💡 Mở iTerm2 → Preferences → Profiles → chọn 'Dotfiles' nếu chưa active"
 else
   echo "  ⏭️  iTerm2 not found, skipping"
 fi
