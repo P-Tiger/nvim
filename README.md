@@ -15,7 +15,7 @@ cd ~/dotfiles
 | Component | Mô tả |
 |-----------|--------|
 | **tmux** | Solarized theme, vim keybindings, lazygit popup (`prefix + g`) |
-| **iTerm2** | Profile với Solarized colors, FiraCode Nerd Font, true color |
+| **iTerm2** | Set FiraCode Nerd Font trên Default profile |
 | **Font** | FiraCode Nerd Font Mono (auto-download) |
 
 ## Tmux Keybindings

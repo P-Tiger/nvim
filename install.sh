@@ -52,19 +52,19 @@ else
   echo "  ✅ FiraCode Nerd Font installed"
 fi
 
-# --- iTerm2 Profile ---
-echo "📦 Setting up iTerm2 profile..."
+# --- iTerm2 Font (Default profile) ---
+echo "📦 Setting iTerm2 font on Default profile..."
 if [[ "$OSTYPE" == "darwin"* ]] && [[ -d "/Applications/iTerm.app" || -d "$HOME/Applications/iTerm.app" ]]; then
-  ITERM2_DIR="$HOME/Library/Application Support/iTerm2/DynamicProfiles"
-  mkdir -p "$ITERM2_DIR"
-  cp "$DOTFILES_DIR/iterm2/profile.json" "$ITERM2_DIR/dotfiles-profile.json"
-  # Set as default profile for new windows/tabs
-  /usr/libexec/PlistBuddy -c "Delete ':New Bookmarks'" ~/Library/Preferences/com.googlecode.iterm2.plist 2>/dev/null || true
-  /usr/libexec/PlistBuddy -c "Add ':New Bookmarks' array" ~/Library/Preferences/com.googlecode.iterm2.plist
-  /usr/libexec/PlistBuddy -c "Add ':New Bookmarks:0' dict" ~/Library/Preferences/com.googlecode.iterm2.plist
-  /usr/libexec/PlistBuddy -c "Add ':New Bookmarks:0:Guid' string 'dotfiles-profile'" ~/Library/Preferences/com.googlecode.iterm2.plist
-  defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string "dotfiles-profile"
-  echo "  ✅ iTerm2 profile 'Dotfiles' installed & set as default"
+  # Remove old dynamic profile if exists
+  rm -f "$HOME/Library/Application Support/iTerm2/DynamicProfiles/dotfiles-profile.json"
+
+  # Set font on Default profile via plist
+  /usr/libexec/PlistBuddy -c "Set ':New Bookmarks:0:Normal Font' 'FiraCodeNFM-Reg 12'" \
+    "$HOME/Library/Preferences/com.googlecode.iterm2.plist" 2>/dev/null || \
+  /usr/libexec/PlistBuddy -c "Add ':New Bookmarks:0:Normal Font' string 'FiraCodeNFM-Reg 12'" \
+    "$HOME/Library/Preferences/com.googlecode.iterm2.plist"
+  echo "  ✅ Font set to FiraCode Nerd Font Mono 12 on Default profile"
+  echo "  ℹ️  Restart iTerm2 to apply"
 else
   echo "  ⏭️  iTerm2 not found, skipping"
 fi
